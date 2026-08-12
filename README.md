@@ -16,7 +16,7 @@ The design focuses on showing engineering work as systems and case studies rathe
 
 ## Live Demo
 
-[View the live portfolio]([https://million-9.github.io/portfolio/index.html])
+[View the live portfolio](https://million-9.github.io/portfolio/index.html)
 
 ---
 
