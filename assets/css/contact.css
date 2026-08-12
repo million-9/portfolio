@@ -1,0 +1,2329 @@
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+
+/* =========================================================
+   ACTIVE NAV
+   ========================================================= */
+
+.nav-menu a[aria-current="page"] {
+  color: var(--accent);
+}
+
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.contact-hero {
+  min-height:
+    calc(78svh - 74px);
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.34fr)
+    minmax(330px, 0.66fr);
+
+  align-items: end;
+
+  gap:
+    clamp(3rem, 8vw, 8rem);
+
+  padding-block:
+    105px 80px;
+}
+
+
+.contact-kicker {
+  margin:
+    0 0 1.4rem;
+
+  color:
+    var(--accent);
+
+  font:
+    800 0.76rem / 1
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Consolas,
+    monospace;
+
+  letter-spacing:
+    0.14em;
+}
+
+
+.contact-hero h1 {
+  max-width:
+    1120px;
+
+  margin:
+    0;
+
+  font-size:
+    clamp(4rem, 7.8vw, 8.4rem);
+
+  line-height:
+    0.89;
+
+  letter-spacing:
+    -0.075em;
+}
+
+
+.contact-hero h1 span {
+  display:
+    block;
+
+  color:
+    #718b81;
+
+  font-weight:
+    560;
+}
+
+
+.contact-hero__lead {
+  max-width:
+    760px;
+
+  margin:
+    2rem 0 0;
+
+  color:
+    #9eb1a9;
+
+  font-size:
+    clamp(1rem, 1.45vw, 1.22rem);
+
+  line-height:
+    1.72;
+}
+
+
+
+/* =========================================================
+   HERO ACTIONS
+   ========================================================= */
+
+.contact-hero__actions {
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    0.8rem;
+
+  margin-top:
+    2rem;
+}
+
+
+
+/* =========================================================
+   HERO ASIDE
+   ========================================================= */
+
+.contact-hero__aside {
+  padding-left:
+    1.5rem;
+
+  border-left:
+    1px solid
+    var(--line-strong);
+}
+
+
+.contact-hero__label {
+  margin:
+    0 0 0.75rem;
+
+  color:
+    var(--accent);
+
+  font:
+    800 0.74rem / 1
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Consolas,
+    monospace;
+
+  letter-spacing:
+    0.11em;
+}
+
+
+.contact-hero__location {
+  margin:
+    0 0 0.85rem;
+
+  color:
+    #aec1b9;
+
+  font-size:
+    1.05rem;
+
+  font-weight:
+    680;
+}
+
+
+.contact-hero__aside >
+p:not(
+  .contact-hero__label,
+  .contact-hero__location
+) {
+  margin:
+    0;
+
+  color:
+    var(--muted);
+
+  line-height:
+    1.72;
+}
+
+
+
+/* =========================================================
+   PIXEL CONTACT BANNER
+   ========================================================= */
+
+.contact-pixel-banner {
+  position:
+    relative;
+
+  width:
+    100%;
+
+  max-width:
+    430px;
+
+  margin:
+    0 0 2rem;
+
+  overflow:
+    visible;
+}
+
+
+
+/* =========================================================
+   PIXEL STATUS
+   ========================================================= */
+
+.contact-pixel-banner__status {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    0.65rem;
+
+  margin-bottom:
+    0.4rem;
+
+  color:
+    #4f7165;
+
+  font:
+    760 0.52rem / 1
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Consolas,
+    monospace;
+
+  letter-spacing:
+    0.13em;
+
+  user-select:
+    none;
+}
+
+
+.contact-pixel-banner__status i {
+  width:
+    4px;
+
+  height:
+    4px;
+
+  border-radius:
+    50%;
+
+  background:
+    #3d5f53;
+
+  animation:
+    contactStatusBlink
+    1.5s
+    steps(2, end)
+    infinite;
+}
+
+
+.contact-pixel-banner__status i:nth-of-type(2) {
+  animation-delay:
+    0.75s;
+}
+
+
+
+/* =========================================================
+   PIXEL STAGE
+   ========================================================= */
+
+.contact-pixel-stage {
+  position:
+    relative;
+
+  width:
+    100%;
+
+  height:
+    195px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  overflow:
+    visible;
+}
+
+
+.contact-pixel-scene {
+  width:
+    100%;
+
+  max-width:
+    430px;
+
+  height:
+    auto;
+
+  display:
+    block;
+
+  overflow:
+    visible;
+
+  image-rendering:
+    pixelated;
+
+  image-rendering:
+    crisp-edges;
+}
+
+
+
+/* =========================================================
+   ENVIRONMENT
+   ========================================================= */
+
+.contact-grid-detail rect {
+  fill:
+    #304f44;
+
+  opacity:
+    0.7;
+}
+
+
+.contact-ground {
+  fill:
+    #365a4d;
+}
+
+
+.contact-ground-shadow {
+  fill:
+    #172821;
+}
+
+
+.contact-floor-pixel {
+  fill:
+    #29483d;
+}
+
+
+
+/* =========================================================
+   PIXEL ENGINEER
+   ========================================================= */
+
+.contact-worker__leg {
+  fill:
+    #789589;
+}
+
+
+.contact-worker__foot {
+  fill:
+    #94aaa1;
+}
+
+
+.contact-worker__body {
+  fill:
+    #6d9183;
+}
+
+
+.contact-worker__accent {
+  fill:
+    var(--accent, #79f7c2);
+}
+
+
+.contact-worker__arm {
+  fill:
+    #87a397;
+}
+
+
+.contact-worker__skin {
+  fill:
+    #b9ccc4;
+}
+
+
+.contact-worker__dark {
+  fill:
+    #3e5b51;
+}
+
+
+.contact-worker__eye {
+  fill:
+    #0d1814;
+}
+
+
+
+/* =========================================================
+   WORKER WHOLE BODY
+   Small reaction as envelope approaches
+   ========================================================= */
+
+.contact-worker {
+  transform-box:
+    view-box;
+
+  transform-origin:
+    100px 157px;
+
+  animation:
+    contactWorkerReaction
+    4.6s
+    steps(1, end)
+    infinite;
+}
+
+
+
+/* =========================================================
+   HEAD
+   Looks toward incoming message
+   ========================================================= */
+
+.contact-worker__head {
+  transform-box:
+    fill-box;
+
+  transform-origin:
+    center bottom;
+
+  animation:
+    contactWorkerHead
+    4.6s
+    steps(1, end)
+    infinite;
+}
+
+
+
+/* =========================================================
+   RECEIVING ARM
+   ========================================================= */
+
+.contact-worker__receive-arm {
+  transform-box:
+    fill-box;
+
+  transform-origin:
+    left center;
+
+  animation:
+    contactReceiveArm
+    4.6s
+    steps(1, end)
+    infinite;
+}
+
+
+
+/* =========================================================
+   ENVELOPE
+   ========================================================= */
+
+.contact-mail {
+  transform-box:
+    view-box;
+
+  transform-origin:
+    351px 76px;
+
+  animation:
+    contactMailFly
+    4.6s
+    linear
+    infinite;
+}
+
+
+.contact-mail__body {
+  fill:
+    #8fa99f;
+}
+
+
+.contact-mail__shadow {
+  fill:
+    #536f65;
+}
+
+
+.contact-mail__flap {
+  fill:
+    #6f8e82;
+}
+
+
+.contact-mail__accent {
+  fill:
+    var(--accent, #79f7c2);
+
+  animation:
+    contactMailAccent
+    1s
+    steps(2, end)
+    infinite;
+}
+
+
+
+/* =========================================================
+   MAIL TRAILS
+   ========================================================= */
+
+.contact-mail-trail {
+  fill:
+    #587a6d;
+
+  opacity:
+    0;
+}
+
+
+.contact-mail-trail--one {
+  animation:
+    contactTrailOne
+    4.6s
+    linear
+    infinite;
+}
+
+
+.contact-mail-trail--two {
+  animation:
+    contactTrailTwo
+    4.6s
+    linear
+    infinite;
+}
+
+
+.contact-mail-trail--three {
+  animation:
+    contactTrailThree
+    4.6s
+    linear
+    infinite;
+}
+
+
+
+/* =========================================================
+   RECEIVED NOTIFICATION
+   ========================================================= */
+
+.contact-received {
+  transform-box:
+    fill-box;
+
+  transform-origin:
+    center;
+
+  opacity:
+    0;
+
+  animation:
+    contactReceivedBox
+    4.6s
+    steps(1, end)
+    infinite;
+}
+
+
+.contact-received__box {
+  fill:
+    #29493e;
+
+  stroke:
+    var(--accent, #79f7c2);
+
+  stroke-width:
+    2;
+}
+
+
+.contact-received__check {
+  fill:
+    var(--accent, #79f7c2);
+}
+
+
+
+/* =========================================================
+   RECEIVED SPARKS
+   ========================================================= */
+
+.contact-received-pixel {
+  fill:
+    var(--accent, #79f7c2);
+
+  opacity:
+    0;
+}
+
+
+.contact-received-pixel--one {
+  animation:
+    contactReceivedPixelOne
+    4.6s
+    steps(1, end)
+    infinite;
+}
+
+
+.contact-received-pixel--two {
+  animation:
+    contactReceivedPixelTwo
+    4.6s
+    steps(1, end)
+    infinite;
+}
+
+
+.contact-received-pixel--three {
+  animation:
+    contactReceivedPixelThree
+    4.6s
+    steps(1, end)
+    infinite;
+}
+
+
+
+/* =========================================================
+   FLYING ENVELOPE
+
+   Timeline:
+
+   0–10%   waiting off/right
+   12–50%  flies across screen
+   50–61%  approaches hand
+   62%     catch
+   63–75%  held briefly
+   76%     disappears
+   80%+    confirmation appears
+   ========================================================= */
+
+@keyframes contactMailFly {
+
+
+  0% {
+    transform:
+      translate(65px, 5px)
+      rotate(0deg);
+
+    opacity:
+      0;
+  }
+
+
+  8% {
+    transform:
+      translate(55px, 2px)
+      rotate(0deg);
+
+    opacity:
+      0;
+  }
+
+
+  12% {
+    transform:
+      translate(42px, 0)
+      rotate(-2deg);
+
+    opacity:
+      1;
+  }
+
+
+  20% {
+    transform:
+      translate(-2px, -6px)
+      rotate(2deg);
+  }
+
+
+  28% {
+    transform:
+      translate(-50px, 3px)
+      rotate(-2deg);
+  }
+
+
+  36% {
+    transform:
+      translate(-100px, -8px)
+      rotate(2deg);
+  }
+
+
+  44% {
+    transform:
+      translate(-151px, 0)
+      rotate(-3deg);
+  }
+
+
+  51% {
+    transform:
+      translate(-192px, 8px)
+      rotate(2deg);
+  }
+
+
+  57% {
+    transform:
+      translate(-220px, 14px)
+      rotate(-2deg);
+  }
+
+
+  /*
+     Envelope reaches receiving hand
+  */
+
+  62% {
+    transform:
+      translate(-239px, 24px)
+      rotate(0deg);
+
+    opacity:
+      1;
+  }
+
+
+  /*
+     Held briefly
+  */
+
+  70% {
+    transform:
+      translate(-239px, 24px)
+      rotate(0deg);
+
+    opacity:
+      1;
+  }
+
+
+  75% {
+    transform:
+      translate(-239px, 24px)
+      rotate(0deg);
+
+    opacity:
+      0;
+  }
+
+
+  100% {
+    transform:
+      translate(-239px, 24px)
+      rotate(0deg);
+
+    opacity:
+      0;
+  }
+
+}
+
+
+
+/* =========================================================
+   RECEIVING ARM
+
+   Starts normal.
+   Raises only when mail approaches.
+   ========================================================= */
+
+@keyframes contactReceiveArm {
+
+
+  0%,
+  42% {
+    transform:
+      rotate(0deg);
+  }
+
+
+  48% {
+    transform:
+      rotate(-20deg);
+  }
+
+
+  55% {
+    transform:
+      rotate(-40deg);
+  }
+
+
+  62% {
+    transform:
+      rotate(-54deg);
+  }
+
+
+  70% {
+    transform:
+      rotate(-54deg);
+  }
+
+
+  76% {
+    transform:
+      rotate(-20deg);
+  }
+
+
+  82%,
+  100% {
+    transform:
+      rotate(0deg);
+  }
+
+}
+
+
+
+/* =========================================================
+   BODY REACTION
+   ========================================================= */
+
+@keyframes contactWorkerReaction {
+
+
+  0%,
+  43% {
+    transform:
+      translate(0, 0);
+  }
+
+
+  48%,
+  60% {
+    transform:
+      translate(2px, -1px);
+  }
+
+
+  63%,
+  72% {
+    transform:
+      translate(3px, 0);
+  }
+
+
+  78%,
+  100% {
+    transform:
+      translate(0, 0);
+  }
+
+}
+
+
+
+/* =========================================================
+   HEAD REACTION
+   ========================================================= */
+
+@keyframes contactWorkerHead {
+
+
+  0%,
+  34% {
+    transform:
+      translate(0, 0);
+  }
+
+
+  40%,
+  62% {
+    transform:
+      translate(2px, 0);
+  }
+
+
+  70%,
+  100% {
+    transform:
+      translate(0, 0);
+  }
+
+}
+
+
+
+/* =========================================================
+   MAIL TRAILS
+   ========================================================= */
+
+@keyframes contactTrailOne {
+
+
+  0%,
+  10% {
+    opacity:
+      0;
+  }
+
+
+  14%,
+  48% {
+    opacity:
+      0.65;
+
+    transform:
+      translateX(0);
+  }
+
+
+  52% {
+    opacity:
+      0.3;
+  }
+
+
+  58%,
+  100% {
+    opacity:
+      0;
+  }
+
+}
+
+
+@keyframes contactTrailTwo {
+
+
+  0%,
+  14% {
+    opacity:
+      0;
+  }
+
+
+  18%,
+  49% {
+    opacity:
+      0.45;
+  }
+
+
+  55%,
+  100% {
+    opacity:
+      0;
+  }
+
+}
+
+
+@keyframes contactTrailThree {
+
+
+  0%,
+  18% {
+    opacity:
+      0;
+  }
+
+
+  22%,
+  50% {
+    opacity:
+      0.35;
+  }
+
+
+  56%,
+  100% {
+    opacity:
+      0;
+  }
+
+}
+
+
+
+/* =========================================================
+   MAIL ACCENT
+   ========================================================= */
+
+@keyframes contactMailAccent {
+
+
+  0%,
+  50% {
+    opacity:
+      0.45;
+  }
+
+
+  51%,
+  100% {
+    opacity:
+      1;
+
+    filter:
+      drop-shadow(
+        0 0 4px
+        rgba(
+          121,
+          247,
+          194,
+          0.55
+        )
+      );
+  }
+
+}
+
+
+
+/* =========================================================
+   RECEIVED BOX
+   ========================================================= */
+
+@keyframes contactReceivedBox {
+
+
+  0%,
+  74% {
+    opacity:
+      0;
+
+    transform:
+      translateY(5px)
+      scale(0.8);
+  }
+
+
+  78% {
+    opacity:
+      1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+
+  90% {
+    opacity:
+      1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+
+  94%,
+  100% {
+    opacity:
+      0;
+
+    transform:
+      translateY(-4px)
+      scale(1);
+  }
+
+}
+
+
+
+/* =========================================================
+   RECEIVED PIXELS
+   ========================================================= */
+
+@keyframes contactReceivedPixelOne {
+
+
+  0%,
+  77% {
+    opacity:
+      0;
+  }
+
+
+  80%,
+  88% {
+    opacity:
+      1;
+  }
+
+
+  92%,
+  100% {
+    opacity:
+      0;
+  }
+
+}
+
+
+@keyframes contactReceivedPixelTwo {
+
+
+  0%,
+  79% {
+    opacity:
+      0;
+  }
+
+
+  82%,
+  90% {
+    opacity:
+      1;
+  }
+
+
+  94%,
+  100% {
+    opacity:
+      0;
+  }
+
+}
+
+
+@keyframes contactReceivedPixelThree {
+
+
+  0%,
+  81% {
+    opacity:
+      0;
+  }
+
+
+  84%,
+  92% {
+    opacity:
+      1;
+  }
+
+
+  96%,
+  100% {
+    opacity:
+      0;
+  }
+
+}
+
+
+
+/* =========================================================
+   STATUS DOT
+   ========================================================= */
+
+@keyframes contactStatusBlink {
+
+
+  0%,
+  50% {
+    background:
+      #3d5f53;
+  }
+
+
+  51%,
+  100% {
+    background:
+      var(--accent, #79f7c2);
+
+    box-shadow:
+      0 0 8px
+      rgba(
+        121,
+        247,
+        194,
+        0.35
+      );
+  }
+
+}
+
+
+
+/* =========================================================
+   CONTACT METHODS
+   ========================================================= */
+
+.contact-methods {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  border-top:
+    1px solid
+    var(--line);
+
+  border-bottom:
+    1px solid
+    var(--line);
+}
+
+
+.contact-method {
+  position:
+    relative;
+
+  min-height:
+    245px;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    auto minmax(0, 1fr) auto;
+
+  gap:
+    1rem;
+
+  align-items:
+    start;
+
+  padding:
+    1.2rem;
+
+  border-right:
+    1px solid
+    var(--line);
+
+  color:
+    inherit;
+
+  text-decoration:
+    none;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.contact-method:last-child {
+  border-right:
+    none;
+}
+
+
+.contact-method:hover {
+  background:
+    rgba(
+      121,
+      247,
+      194,
+      0.026
+    );
+
+  transform:
+    translateY(-2px);
+}
+
+
+.contact-method--primary {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(
+        121,
+        247,
+        194,
+        0.035
+      ),
+      transparent
+    );
+}
+
+
+.contact-method__number {
+  color:
+    #45675b;
+
+  font:
+    750 0.56rem / 1
+    ui-monospace,
+    monospace;
+}
+
+
+.contact-method small {
+  display:
+    block;
+
+  color:
+    var(--accent);
+
+  font:
+    780 0.58rem / 1
+    ui-monospace,
+    monospace;
+
+  letter-spacing:
+    0.09em;
+}
+
+
+.contact-method strong {
+  display:
+    block;
+
+  margin-top:
+    1.3rem;
+
+  color:
+    #b7cac2;
+
+  font-size:
+    clamp(0.95rem, 1.3vw, 1.08rem);
+
+  line-height:
+    1.35;
+
+  overflow-wrap:
+    anywhere;
+}
+
+
+.contact-method p {
+  max-width:
+    290px;
+
+  margin:
+    0.75rem 0 0;
+
+  color:
+    #6f877d;
+
+  font-size:
+    0.74rem;
+
+  line-height:
+    1.65;
+}
+
+
+.contact-method__arrow {
+  color:
+    #557468;
+
+  font-size:
+    1rem;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.contact-method:hover
+.contact-method__arrow {
+  color:
+    var(--accent);
+
+  transform:
+    translate(2px, -2px);
+}
+
+
+
+/* =========================================================
+   CONTACT TOPICS
+   ========================================================= */
+
+.contact-topics {
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(0, 0.68fr)
+    minmax(0, 1.32fr);
+
+  align-items:
+    start;
+
+  gap:
+    clamp(3rem, 8vw, 8rem);
+
+  border-top:
+    1px solid
+    var(--line);
+}
+
+
+.contact-topics__heading {
+  position:
+    sticky;
+
+  top:
+    110px;
+}
+
+
+.contact-topics__heading h2 {
+  max-width:
+    600px;
+
+  margin:
+    0.6rem 0 0;
+
+  font-size:
+    clamp(2.8rem, 5vw, 5rem);
+
+  line-height:
+    0.97;
+
+  letter-spacing:
+    -0.06em;
+}
+
+
+.contact-topics__heading h2 span {
+  display:
+    block;
+
+  color:
+    #71887f;
+}
+
+
+
+/* =========================================================
+   TOPIC GRID
+   ========================================================= */
+
+.contact-topics__grid {
+  border-top:
+    1px solid
+    var(--line);
+}
+
+
+.contact-topic {
+  min-height:
+    155px;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    46px minmax(0, 1fr) auto;
+
+  gap:
+    1rem;
+
+  align-items:
+    center;
+
+  padding:
+    1.1rem 0;
+
+  border-bottom:
+    1px solid
+    var(--line);
+
+  text-decoration:
+    none;
+
+  transition:
+    padding-left 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.contact-topic:hover {
+  padding-left:
+    0.8rem;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(
+        121,
+        247,
+        194,
+        0.025
+      ),
+      transparent
+    );
+}
+
+
+.contact-topic > span {
+  color:
+    #44645a;
+
+  font:
+    740 0.54rem / 1
+    ui-monospace,
+    monospace;
+}
+
+
+.contact-topic strong {
+  color:
+    #aebfb8;
+
+  font-size:
+    1rem;
+}
+
+
+.contact-topic p {
+  max-width:
+    590px;
+
+  margin:
+    0.5rem 0 0;
+
+  color:
+    #6f867d;
+
+  font-size:
+    0.76rem;
+
+  line-height:
+    1.65;
+}
+
+
+.contact-topic i {
+  padding-right:
+    0.5rem;
+
+  color:
+    #527367;
+
+  font-style:
+    normal;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+
+.contact-topic:hover i {
+  color:
+    var(--accent);
+
+  transform:
+    translateX(4px);
+}
+
+
+
+/* =========================================================
+   CONTACT CONTEXT
+   ========================================================= */
+
+.contact-context {
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(0, 0.7fr)
+    minmax(0, 1.3fr);
+
+  gap:
+    clamp(3rem, 8vw, 8rem);
+
+  align-items:
+    start;
+
+  padding-block:
+    110px;
+
+  border-top:
+    1px solid
+    var(--line);
+
+  border-bottom:
+    1px solid
+    var(--line);
+}
+
+
+.contact-context h2 {
+  max-width:
+    620px;
+
+  margin:
+    0.6rem 0 0;
+
+  font-size:
+    clamp(2.8rem, 4.8vw, 4.8rem);
+
+  line-height:
+    0.98;
+
+  letter-spacing:
+    -0.06em;
+}
+
+
+.contact-context >
+div:first-child >
+p:last-child {
+  max-width:
+    590px;
+
+  margin:
+    1.2rem 0 0;
+
+  color:
+    #728980;
+
+  line-height:
+    1.72;
+}
+
+
+
+/* =========================================================
+   CONTEXT LINKS
+   ========================================================= */
+
+.contact-context__links {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  border-top:
+    1px solid
+    var(--line);
+
+  border-left:
+    1px solid
+    var(--line);
+}
+
+
+.contact-context__links a {
+  position:
+    relative;
+
+  min-height:
+    165px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  padding:
+    1rem;
+
+  border-right:
+    1px solid
+    var(--line);
+
+  border-bottom:
+    1px solid
+    var(--line);
+
+  text-decoration:
+    none;
+
+  transition:
+    background 0.25s ease;
+}
+
+
+.contact-context__links a:hover {
+  background:
+    rgba(
+      121,
+      247,
+      194,
+      0.023
+    );
+}
+
+
+.contact-context__links a > span {
+  color:
+    #45655a;
+
+  font:
+    740 0.53rem / 1
+    ui-monospace,
+    monospace;
+}
+
+
+.contact-context__links strong {
+  margin-top:
+    auto;
+
+  color:
+    #a6bab2;
+}
+
+
+.contact-context__links small {
+  margin-top:
+    0.45rem;
+
+  padding-right:
+    1.5rem;
+
+  color:
+    #637a71;
+
+  font-size:
+    0.69rem;
+}
+
+
+.contact-context__links i {
+  position:
+    absolute;
+
+  right:
+    1rem;
+
+  bottom:
+    1rem;
+
+  color:
+    #527267;
+
+  font-style:
+    normal;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.contact-context__links a:hover i {
+  color:
+    var(--accent);
+
+  transform:
+    translateX(3px);
+}
+
+
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.contact-final {
+  border-bottom:
+    1px solid
+    var(--line);
+}
+
+
+.contact-final__content {
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(300px, 0.55fr);
+
+  align-items:
+    end;
+
+  gap:
+    clamp(3rem, 7vw, 7rem);
+}
+
+
+.contact-final h2 {
+  max-width:
+    880px;
+
+  margin:
+    0.6rem 0 0;
+
+  font-size:
+    clamp(2.8rem, 5vw, 5.4rem);
+
+  line-height:
+    0.98;
+
+  letter-spacing:
+    -0.06em;
+}
+
+
+.contact-final__content >
+div > p {
+  max-width:
+    650px;
+
+  margin:
+    1.3rem 0 0;
+
+  color:
+    #728980;
+
+  line-height:
+    1.72;
+}
+
+
+
+/* =========================================================
+   FINAL EMAIL
+   ========================================================= */
+
+.contact-final__email {
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr auto;
+
+  gap:
+    0.7rem;
+
+  align-items:
+    end;
+
+  padding:
+    1.25rem 0;
+
+  border-top:
+    1px solid
+    var(--line);
+
+  border-bottom:
+    1px solid
+    var(--line);
+
+  text-decoration:
+    none;
+}
+
+
+.contact-final__email > span {
+  grid-column:
+    1 / -1;
+
+  color:
+    var(--accent);
+
+  font:
+    800 0.58rem / 1
+    ui-monospace,
+    monospace;
+
+  letter-spacing:
+    0.1em;
+}
+
+
+.contact-final__email strong {
+  color:
+    #a8bbb4;
+
+  font-size:
+    0.89rem;
+
+  overflow-wrap:
+    anywhere;
+}
+
+
+.contact-final__email i {
+  color:
+    #58776c;
+
+  font-style:
+    normal;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.contact-final__email:hover i {
+  color:
+    var(--accent);
+
+  transform:
+    translateX(4px);
+}
+
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.contact-footer {
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    flex-end;
+
+  gap:
+    2rem;
+
+  padding-block:
+    32px;
+}
+
+
+.contact-footer > div:first-child {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    0.35rem;
+}
+
+
+.contact-footer strong {
+  color:
+    #a9bbb4;
+}
+
+
+.contact-footer span {
+  color:
+    #587068;
+
+  font-size:
+    0.72rem;
+}
+
+
+.contact-footer__links {
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  justify-content:
+    flex-end;
+
+  gap:
+    1.2rem;
+}
+
+
+.contact-footer__links a {
+  color:
+    #6f887e;
+
+  text-decoration:
+    none;
+
+  font-size:
+    0.72rem;
+}
+
+
+.contact-footer__links a:hover {
+  color:
+    var(--accent);
+}
+
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 980px) {
+
+  .contact-hero {
+    grid-template-columns:
+      1fr;
+
+    min-height:
+      auto;
+
+    padding-block:
+      90px 70px;
+  }
+
+
+  .contact-hero__aside {
+    max-width:
+      720px;
+  }
+
+
+  .contact-pixel-banner {
+    max-width:
+      500px;
+  }
+
+
+  .contact-pixel-stage {
+    height:
+      210px;
+  }
+
+
+  .contact-methods {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .contact-method {
+    min-height:
+      180px;
+
+    border-right:
+      none;
+
+    border-bottom:
+      1px solid
+      var(--line);
+  }
+
+
+  .contact-method:last-child {
+    border-bottom:
+      none;
+  }
+
+
+  .contact-topics {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      2.5rem;
+  }
+
+
+  .contact-topics__heading {
+    position:
+      relative;
+
+    top:
+      auto;
+  }
+
+
+  .contact-context {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      2.5rem;
+  }
+
+
+  .contact-final__content {
+    grid-template-columns:
+      1fr;
+  }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .contact-hero {
+    padding-block:
+      70px 55px;
+  }
+
+
+  .contact-hero h1 {
+    font-size:
+      clamp(3.3rem, 15vw, 5.8rem);
+  }
+
+
+  .contact-hero__aside {
+    padding-left:
+      1rem;
+  }
+
+
+  .contact-pixel-banner {
+    max-width:
+      100%;
+  }
+
+
+  .contact-pixel-stage {
+    height:
+      185px;
+  }
+
+
+  .contact-pixel-banner__status {
+    font-size:
+      0.46rem;
+  }
+
+
+  .contact-method {
+    grid-template-columns:
+      auto minmax(0, 1fr) auto;
+  }
+
+
+  .contact-topic {
+    grid-template-columns:
+      36px minmax(0, 1fr) auto;
+  }
+
+
+  .contact-context {
+    padding-block:
+      80px;
+  }
+
+
+  .contact-context__links {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .contact-footer {
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+  }
+
+
+  .contact-footer__links {
+    justify-content:
+      flex-start;
+  }
+
+}
+
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .contact-pixel-banner__status {
+    gap:
+      0.4rem;
+
+    font-size:
+      0.4rem;
+
+    letter-spacing:
+      0.09em;
+  }
+
+
+  .contact-pixel-stage {
+    height:
+      165px;
+  }
+
+
+  .contact-pixel-scene {
+    width:
+      110%;
+
+    max-width:
+      420px;
+  }
+
+
+  .contact-hero__actions {
+    display:
+      grid;
+
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .contact-hero__actions
+  .button {
+    width:
+      100%;
+  }
+
+
+  .contact-method {
+    grid-template-columns:
+      1fr auto;
+
+    gap:
+      0.75rem;
+  }
+
+
+  .contact-method__number {
+    grid-column:
+      1 / -1;
+  }
+
+
+  .contact-topic {
+    grid-template-columns:
+      1fr auto;
+
+    gap:
+      0.7rem;
+  }
+
+
+  .contact-topic > span {
+    grid-column:
+      1 / -1;
+  }
+
+
+  .contact-final__email {
+    grid-template-columns:
+      minmax(0, 1fr) auto;
+  }
+
+}
+
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (
+  prefers-reduced-motion: reduce
+) {
+
+  .contact-worker,
+  .contact-worker__head,
+  .contact-worker__receive-arm,
+  .contact-mail,
+  .contact-mail-trail,
+  .contact-mail__accent,
+  .contact-received,
+  .contact-received-pixel,
+  .contact-pixel-banner__status i {
+    animation:
+      none !important;
+  }
+
+
+  .contact-mail {
+    transform:
+      translate(-239px, 24px);
+
+    opacity:
+      1;
+  }
+
+
+  .contact-worker__receive-arm {
+    transform:
+      rotate(-54deg);
+  }
+
+
+  .contact-received {
+    opacity:
+      1;
+
+    transform:
+      none;
+  }
+
+}
