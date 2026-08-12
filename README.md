@@ -8,29 +8,34 @@ The design focuses on showing engineering work as systems and case studies rathe
 
 ---
 
-## Live Demo
+## Preview
 
-Add your deployed website here:
-
-```text
-https://YOUR-USERNAME.github.io/
-```
+![Engineering Portfolio Template Preview](assets/readme/portfolio-preview.gif)
 
 ---
 
-## Preview
+## Live Demo
 
-This template includes:
+[View the live portfolio]([https://YOUR-WEBSITE-URL](https://million-9.github.io/portfolio/index.html))
 
-* a technical landing page
-* animated engineering visuals
-* project case studies
-* support for simulation/project videos
-* experience and education sections
-* skills organized by technical area
-* responsive mobile navigation
-* accessibility and reduced-motion support
-* GitHub Pages compatibility
+---
+
+## Features
+
+* Responsive multi-page portfolio
+* Dark engineering-inspired interface
+* Animated homepage hero
+* Engineering project showcase
+* SVG-based technical animations
+* Support for project videos
+* Project case-study layouts
+* Experience timeline
+* Skills grouped by engineering domain
+* Mobile navigation
+* Reduced-motion accessibility support
+* Keyboard-accessible navigation
+* GitHub Pages compatible
+* No frameworks or build tools required
 
 ---
 
@@ -115,7 +120,6 @@ portfolio/
 ├── contact.html
 │
 ├── assets/
-│   │
 │   ├── css/
 │   │   ├── base.css
 │   │   ├── home.css
@@ -132,8 +136,11 @@ portfolio/
 │   ├── images/
 │   │   └── ...
 │   │
-│   └── videos/
-│       └── ...
+│   ├── videos/
+│   │   └── ...
+│   │
+│   └── readme/
+│       └── portfolio-preview.gif
 │
 ├── README.md
 └── LICENSE
