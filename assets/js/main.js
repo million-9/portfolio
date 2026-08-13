@@ -411,7 +411,7 @@ document.addEventListener(
     */
 
     const SLIDE_TIME =
-      3500;
+      5000;
 
 
 
