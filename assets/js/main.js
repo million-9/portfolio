@@ -1,588 +1,474 @@
-document.addEventListener(
-  "DOMContentLoaded",
-  function () {
+(() => {
 
+  /* =========================================================
+     MOBILE NAVIGATION
+     ========================================================= */
 
-    /* =====================================================
-       MOBILE NAVIGATION
-       ===================================================== */
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
 
-    const navToggle =
-      document.querySelector(
-        ".nav-toggle"
+  if (navToggle && navMenu) {
+
+    const closeMenu = () => {
+      navMenu.classList.remove('is-open');
+
+      navToggle.setAttribute(
+        'aria-expanded',
+        'false'
       );
 
-    const navMenu =
-      document.querySelector(
-        ".nav-menu"
+      navToggle.setAttribute(
+        'aria-label',
+        'Open navigation menu'
+      );
+    };
+
+
+    navToggle.addEventListener('click', () => {
+
+      const isOpen =
+        navToggle.getAttribute('aria-expanded') === 'true';
+
+      navToggle.setAttribute(
+        'aria-expanded',
+        String(!isOpen)
       );
 
+      navToggle.setAttribute(
+        'aria-label',
+        isOpen
+          ? 'Open navigation menu'
+          : 'Close navigation menu'
+      );
 
-    if (
-      navToggle &&
-      navMenu
-    ) {
+      navMenu.classList.toggle(
+        'is-open',
+        !isOpen
+      );
+
+    });
 
 
-      function closeMenu() {
+    navMenu
+      .querySelectorAll('a')
+      .forEach(link => {
 
-        navMenu.classList.remove(
-          "is-open"
+        link.addEventListener(
+          'click',
+          closeMenu
         );
 
-        navToggle.setAttribute(
-          "aria-expanded",
-          "false"
-        );
+      });
 
-        navToggle.setAttribute(
-          "aria-label",
-          "Open navigation menu"
-        );
+
+    document.addEventListener(
+      'keydown',
+      event => {
+
+        if (event.key === 'Escape') {
+          closeMenu();
+        }
 
       }
+    );
 
+  }
 
 
-      navToggle.addEventListener(
-        "click",
-        function () {
+  /* =========================================================
+     REDUCED MOTION
+     ========================================================= */
 
-          const isOpen =
-            navToggle.getAttribute(
-              "aria-expanded"
-            ) === "true";
+  const reduceMotion =
+    window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
 
 
-          navToggle.setAttribute(
-            "aria-expanded",
-            String(!isOpen)
-          );
+  /* =========================================================
+     REVEAL ON SCROLL
+     ========================================================= */
 
+  const revealItems =
+    document.querySelectorAll('.reveal');
 
-          navToggle.setAttribute(
-            "aria-label",
-            isOpen
-              ? "Open navigation menu"
-              : "Close navigation menu"
-          );
 
+  if (
+    reduceMotion ||
+    !('IntersectionObserver' in window)
+  ) {
 
-          navMenu.classList.toggle(
-            "is-open",
-            !isOpen
-          );
+    revealItems.forEach(item => {
+      item.classList.add('is-visible');
+    });
 
-        }
-      );
+  } else {
 
+    const observer =
+      new IntersectionObserver(
 
+        entries => {
 
-      navMenu
-        .querySelectorAll("a")
-        .forEach(
-          function (link) {
+          entries.forEach(entry => {
 
-            link.addEventListener(
-              "click",
-              closeMenu
-            );
+            if (entry.isIntersecting) {
 
-          }
-        );
-
-
-
-      document.addEventListener(
-        "keydown",
-        function (event) {
-
-          if (
-            event.key === "Escape"
-          ) {
-
-            closeMenu();
-
-          }
-
-        }
-      );
-
-    }
-
-
-
-    /* =====================================================
-       REDUCED MOTION
-       ===================================================== */
-
-    const reduceMotion =
-      window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches;
-
-
-
-    /* =====================================================
-       REVEAL ON SCROLL
-       ===================================================== */
-
-    const revealItems =
-      document.querySelectorAll(
-        ".reveal"
-      );
-
-
-    if (
-      reduceMotion ||
-      !(
-        "IntersectionObserver"
-        in window
-      )
-    ) {
-
-
-      revealItems.forEach(
-        function (item) {
-
-          item.classList.add(
-            "is-visible"
-          );
-
-        }
-      );
-
-
-    } else {
-
-
-      const observer =
-        new IntersectionObserver(
-          function (entries) {
-
-            entries.forEach(
-              function (entry) {
-
-                if (
-                  entry.isIntersecting
-                ) {
-
-                  entry.target.classList.add(
-                    "is-visible"
-                  );
-
-                  observer.unobserve(
-                    entry.target
-                  );
-
-                }
-
-              }
-            );
-
-          },
-          {
-            threshold:
-              0.12,
-
-            rootMargin:
-              "0px 0px -30px 0px"
-          }
-        );
-
-
-      revealItems.forEach(
-        function (item) {
-
-          observer.observe(
-            item
-          );
-
-        }
-      );
-
-    }
-
-
-
-    /* =====================================================
-       HERO ROTATING PHRASE
-       ===================================================== */
-
-    const phrase =
-      document.querySelector(
-        ".phrase"
-      );
-
-
-    if (
-      phrase &&
-      !reduceMotion
-    ) {
-
-
-      let phrases =
-        [];
-
-
-      try {
-
-        phrases =
-          JSON.parse(
-            phrase.dataset.phrases ||
-            "[]"
-          );
-
-      } catch (_) {
-
-        phrases =
-          [];
-
-      }
-
-
-      if (
-        phrases.length > 1
-      ) {
-
-
-        let phraseIndex =
-          0;
-
-
-        window.setInterval(
-          function () {
-
-
-            const fadeOut =
-              phrase.animate(
-                [
-                  {
-                    opacity:
-                      1,
-
-                    transform:
-                      "translateY(0)"
-                  },
-
-                  {
-                    opacity:
-                      0,
-
-                    transform:
-                      "translateY(-8px)"
-                  }
-                ],
-                {
-                  duration:
-                    180,
-
-                  fill:
-                    "forwards",
-
-                  easing:
-                    "ease"
-                }
+              entry.target.classList.add(
+                'is-visible'
               );
 
+              observer.unobserve(
+                entry.target
+              );
 
-            fadeOut.finished.then(
-              function () {
+            }
 
+          });
 
-                phraseIndex =
-                  (
-                    phraseIndex + 1
-                  ) %
-                  phrases.length;
+        },
 
+        {
+          threshold: 0.12,
+          rootMargin:
+            '0px 0px -30px 0px'
+        }
 
-                phrase.textContent =
-                  phrases[
-                    phraseIndex
-                  ];
-
-
-                phrase.animate(
-                  [
-                    {
-                      opacity:
-                        0,
-
-                      transform:
-                        "translateY(8px)"
-                    },
-
-                    {
-                      opacity:
-                        1,
-
-                      transform:
-                        "translateY(0)"
-                    }
-                  ],
-                  {
-                    duration:
-                      220,
-
-                    fill:
-                      "forwards",
-
-                    easing:
-                      "ease"
-                  }
-                );
+      );
 
 
-              }
-            );
+    revealItems.forEach(item => {
+      observer.observe(item);
+    });
+
+  }
 
 
-          },
-          2600
+  /* =========================================================
+     ROTATING HERO PHRASE
+     ========================================================= */
+
+  const phrase =
+    document.querySelector('.phrase');
+
+
+  if (
+    phrase &&
+    !reduceMotion
+  ) {
+
+    let phrases = [];
+
+
+    try {
+
+      phrases =
+        JSON.parse(
+          phrase.dataset.phrases || '[]'
         );
 
-      }
+    } catch (_) {
+
+      phrases = [];
 
     }
 
 
+    if (phrases.length > 1) {
 
-    /* =====================================================
-       HOME ENGINEERING CAROUSEL
-       ===================================================== */
+      let phraseIndex = 0;
+
+
+      window.setInterval(() => {
+
+        phrase.animate(
+
+          [
+            {
+              opacity: 1,
+              transform:
+                'translateY(0)'
+            },
+
+            {
+              opacity: 0,
+              transform:
+                'translateY(-8px)'
+            }
+          ],
+
+          {
+            duration: 180,
+            fill: 'forwards',
+            easing: 'ease'
+          }
+
+        ).finished.then(() => {
+
+          phraseIndex =
+            (phraseIndex + 1) %
+            phrases.length;
+
+
+          phrase.textContent =
+            phrases[phraseIndex];
+
+
+          phrase.animate(
+
+            [
+              {
+                opacity: 0,
+                transform:
+                  'translateY(8px)'
+              },
+
+              {
+                opacity: 1,
+                transform:
+                  'translateY(0)'
+              }
+            ],
+
+            {
+              duration: 220,
+              fill: 'forwards',
+              easing: 'ease'
+            }
+
+          );
+
+        });
+
+      }, 2600);
+
+    }
+
+  }
+
+
+  /* =========================================================
+     HOMEPAGE SLIDESHOW
+     ========================================================= */
+
+  const slideshow =
+    document.querySelector(
+      '.hero-showcase'
+    );
+
+
+  if (slideshow) {
 
     const slides =
       Array.from(
-        document.querySelectorAll(
-          ".showcase-slide"
+        slideshow.querySelectorAll(
+          '.showcase-slide'
         )
       );
 
 
-    const counter =
-      document.querySelector(
-        "[data-showcase-current]"
+    const currentCounter =
+      slideshow.querySelector(
+        '[data-showcase-current]'
       );
 
 
     const previousButton =
-      document.querySelector(
-        "[data-showcase-prev]"
+      slideshow.querySelector(
+        '[data-showcase-prev]'
       );
 
 
     const nextButton =
-      document.querySelector(
-        "[data-showcase-next]"
-      );
-
-
-    const carousel =
-      document.querySelector(
-        ".hero-showcase"
+      slideshow.querySelector(
+        '[data-showcase-next]'
       );
 
 
     /*
-     Other pages use this shared script.
-     If there is no homepage carousel,
-     simply stop carousel setup here.
+       Change this value to control
+       slideshow speed.
+
+       4000 = 4 seconds
+       5000 = 5 seconds
+       etc.
     */
 
-    if (
-      slides.length === 0
-    ) {
-      return;
-    }
+    const SLIDE_TIME = 5000;
 
 
+    let currentSlide = 0;
 
-    let currentSlide =
-      0;
+    let slideInterval = null;
 
+    let isHovered = false;
 
-    let slideshowTimer =
-      null;
-
-
-    /*
-     2 seconds per slide.
-    */
-
-    const SLIDE_TIME =
-      5000;
+    let hasFocus = false;
 
 
+    /* -------------------------------------------------------
+       SHOW SPECIFIC SLIDE
+       ------------------------------------------------------- */
 
-    /* =====================================================
-       SHOW SLIDE
-       ===================================================== */
+    const showSlide = index => {
 
-    function showSlide(
-      requestedIndex
-    ) {
+      if (!slides.length) {
+        return;
+      }
 
 
       currentSlide =
         (
-          requestedIndex +
+          index +
           slides.length
         ) %
         slides.length;
 
 
-
       slides.forEach(
-        function (
-          slide,
-          index
-        ) {
+        (slide, slideIndex) => {
 
-
-          const active =
-            index ===
-            currentSlide;
+          const isActive =
+            slideIndex === currentSlide;
 
 
           slide.classList.toggle(
-            "is-active",
-            active
+            'is-active',
+            isActive
           );
 
 
           slide.setAttribute(
-            "aria-hidden",
-            String(!active)
+            'aria-hidden',
+            String(!isActive)
           );
-
 
         }
       );
 
 
+      if (currentCounter) {
 
-      if (
-        counter
-      ) {
-
-
-        counter.textContent =
+        currentCounter.textContent =
           String(
             currentSlide + 1
           ).padStart(
             2,
-            "0"
+            '0'
           );
-
 
       }
 
-    }
+    };
 
 
+    /* -------------------------------------------------------
+       NEXT / PREVIOUS
+       ------------------------------------------------------- */
 
-    /* =====================================================
-       NEXT
-       ===================================================== */
-
-    function nextSlide() {
+    const nextSlide = () => {
 
       showSlide(
         currentSlide + 1
       );
 
-    }
+    };
 
 
-
-    /* =====================================================
-       PREVIOUS
-       ===================================================== */
-
-    function previousSlide() {
+    const previousSlide = () => {
 
       showSlide(
         currentSlide - 1
       );
 
-    }
+    };
 
 
+    /* -------------------------------------------------------
+       STOP AUTOPLAY
+       ------------------------------------------------------- */
 
-    /* =====================================================
-       STOP AUTO PLAY
-       ===================================================== */
+    const stopAutoplay = () => {
 
-    function stopSlideshow() {
-
-
-      if (
-        slideshowTimer !== null
-      ) {
-
+      if (slideInterval) {
 
         window.clearInterval(
-          slideshowTimer
+          slideInterval
         );
 
-
-        slideshowTimer =
-          null;
-
+        slideInterval = null;
 
       }
 
-    }
+    };
 
 
+    /* -------------------------------------------------------
+       START AUTOPLAY
+       ------------------------------------------------------- */
 
-    /* =====================================================
-       START AUTO PLAY
-       ===================================================== */
+    const startAutoplay = () => {
 
-    function startSlideshow() {
+      /*
+         Do not autoplay when:
 
-
-      stopSlideshow();
-
+         - reduced motion is enabled
+         - mouse is over slideshow
+         - slideshow has keyboard focus
+         - browser tab is hidden
+         - there is only one slide
+      */
 
       if (
         reduceMotion ||
-        slides.length < 2
+        isHovered ||
+        hasFocus ||
+        document.hidden ||
+        slides.length <= 1
       ) {
+
         return;
+
       }
 
 
-      slideshowTimer =
+      stopAutoplay();
+
+
+      slideInterval =
         window.setInterval(
           nextSlide,
           SLIDE_TIME
         );
 
-    }
+    };
 
 
+    /* -------------------------------------------------------
+       RESET TIMER AFTER MANUAL NAVIGATION
+       ------------------------------------------------------- */
 
-    /* =====================================================
-       PREVIOUS BUTTON
-       ===================================================== */
+    const restartAutoplay = () => {
 
-    if (
-      previousButton
-    ) {
+      stopAutoplay();
 
+      startAutoplay();
+
+    };
+
+
+    /* -------------------------------------------------------
+       BUTTONS
+       ------------------------------------------------------- */
+
+    if (previousButton) {
 
       previousButton.addEventListener(
-        "click",
-        function () {
-
+        'click',
+        () => {
 
           previousSlide();
 
-          startSlideshow();
-
+          restartAutoplay();
 
         }
       );
@@ -590,79 +476,15 @@ document.addEventListener(
     }
 
 
-
-    /* =====================================================
-       NEXT BUTTON
-       ===================================================== */
-
-    if (
-      nextButton
-    ) {
-
+    if (nextButton) {
 
       nextButton.addEventListener(
-        "click",
-        function () {
-
+        'click',
+        () => {
 
           nextSlide();
 
-          startSlideshow();
-
-
-        }
-      );
-
-    }
-
-
-
-    /* =====================================================
-       KEYBOARD CONTROL
-       ===================================================== */
-
-    if (
-      carousel
-    ) {
-
-
-      carousel.addEventListener(
-        "keydown",
-        function (event) {
-
-
-          if (
-            event.key ===
-            "ArrowRight"
-          ) {
-
-
-            event.preventDefault();
-
-            nextSlide();
-
-            startSlideshow();
-
-
-          }
-
-
-
-          if (
-            event.key ===
-            "ArrowLeft"
-          ) {
-
-
-            event.preventDefault();
-
-            previousSlide();
-
-            startSlideshow();
-
-
-          }
-
+          restartAutoplay();
 
         }
       );
@@ -670,80 +492,134 @@ document.addEventListener(
     }
 
 
+    /* =======================================================
+       PAUSE WHEN MOUSE IS OVER SLIDESHOW
+       ======================================================= */
 
-    /* =====================================================
-       TAB VISIBILITY
-       ===================================================== */
+    slideshow.addEventListener(
+      'mouseenter',
+      () => {
 
-    document.addEventListener(
-      "visibilitychange",
-      function () {
+        isHovered = true;
 
+        stopAutoplay();
+
+      }
+    );
+
+
+    slideshow.addEventListener(
+      'mouseleave',
+      () => {
+
+        isHovered = false;
+
+        startAutoplay();
+
+      }
+    );
+
+
+    /* =======================================================
+       ALSO PAUSE FOR KEYBOARD USERS
+       ======================================================= */
+
+    slideshow.addEventListener(
+      'focusin',
+      () => {
+
+        hasFocus = true;
+
+        stopAutoplay();
+
+      }
+    );
+
+
+    slideshow.addEventListener(
+      'focusout',
+      event => {
+
+        /*
+           Only resume when focus has
+           completely left the slideshow.
+        */
 
         if (
-          document.hidden
+          !slideshow.contains(
+            event.relatedTarget
+          )
         ) {
 
+          hasFocus = false;
 
-          stopSlideshow();
+          startAutoplay();
 
+        }
+
+      }
+    );
+
+
+    /* -------------------------------------------------------
+       KEYBOARD ARROWS
+       ------------------------------------------------------- */
+
+    slideshow.addEventListener(
+      'keydown',
+      event => {
+
+        if (event.key === 'ArrowLeft') {
+
+          event.preventDefault();
+
+          previousSlide();
+
+        }
+
+
+        if (event.key === 'ArrowRight') {
+
+          event.preventDefault();
+
+          nextSlide();
+
+        }
+
+      }
+    );
+
+
+    /* -------------------------------------------------------
+       PAUSE WHEN TAB IS HIDDEN
+       ------------------------------------------------------- */
+
+    document.addEventListener(
+      'visibilitychange',
+      () => {
+
+        if (document.hidden) {
+
+          stopAutoplay();
 
         } else {
 
-
-          startSlideshow();
-
+          startAutoplay();
 
         }
-
 
       }
     );
 
 
-
-    /* =====================================================
-       PREPARE IMAGES
-       ===================================================== */
-
-    slides.forEach(
-      function (slide) {
-
-
-        const image =
-          slide.querySelector(
-            "img"
-          );
-
-
-        if (
-          !image
-        ) {
-          return;
-        }
-
-
-        image.loading =
-          "eager";
-
-
-        image.decoding =
-          "async";
-
-
-      }
-    );
-
-
-
-    /* =====================================================
-       INITIALISE
-       ===================================================== */
+    /* -------------------------------------------------------
+       INITIAL STATE
+       ------------------------------------------------------- */
 
     showSlide(0);
 
-    startSlideshow();
-
+    startAutoplay();
 
   }
-);
+
+})();
